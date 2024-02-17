@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/siorikco/LEARNSIORIK/
+    - /bin/cp * $DEPLOYPATH
+    
