@@ -1,0 +1,154 @@
+
+{% extends 'base.html' %}
+{% block title %}Our Services{% endblock %}
+{% load static %}
+{% block content %}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Libraries Stylesheet -->
+<link href="{% static 'assets/lib1/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+<!-- Customized Bootstrap Stylesheet -->
+<link href="{% static 'assets/css1/bootstrap.min.css' %} " rel="stylesheet">
+  
+<!-- Template Stylesheet -->
+<!--<link href="{% static 'assets/css1/style.css' %}" rel="stylesheet">-->
+</head>
+<body>
+   <!-- Page Header Start -->
+ <div class="container-fluid bg-dark p-5">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="display-4 text-white">Services</h1>
+            
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- Services Start -->
+<section class="">
+<div class="container-fluid py-6 px-5">
+    <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+        <h1 class="display-5 mb-0">What We Offer</h1>
+        <hr class="w-25 mx-auto bg-primary">
+    </div>
+    <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+            <div class="service-item bg-secondary text-center px-6">
+                <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle mx-auto mb-4" style="width: 100px; height: 100px;">
+                    <i class="fa-solid fa-skull-crossbones fa-2x"></i>
+                </div>
+                <h3 class="mb-3">AML/CFT Risk Assessment</h3>
+                <p class="mb-0">Developing AML/CFT Risk Assessment of your organization as per regulatory requirments.</p>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="service-item bg-secondary text-center px-5">
+                <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle mx-auto mb-4" style="width: 100px; height: 100px;">
+                    <i class="fa-solid fa-file fa-2x"></i>
+                </div>
+                <h3 class="mb-3">AML/CFT Policies and Procedures</h3>
+                <p class="mb-0">Developing AML/CFT policies and procedures as per risk assessment and regulatory requirements.</p>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="service-item bg-secondary text-center px-5">
+                <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle mx-auto mb-4" style="width: 100px; height: 100px;">
+                    <i class="fa-solid fa-magnifying-glass fa-2x"></i>
+                </div>
+                <h3 class="mb-3">AML/CFT Audit</h3>
+                <p class="mb-0">Conducting AML/CFT Audit as per Policies, procedure, rules, laws and international standards.</p>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="service-item bg-secondary text-center px-5">
+                <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle mx-auto mb-4" style="width: 100px; height: 100px;">
+                    <i class="fa-solid fa-chalkboard-user fa-2x"></i>
+                </div>
+                <h3 class="mb-3">AML/CFT Training</h3>
+                <p class="mb-0">Providing training to your staff as per orgainzation requirement.</p>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="service-item bg-secondary text-center px-5">
+                <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle mx-auto mb-4" style="width: 100px; height: 100px;">
+                    <i class="fa-solid fa-building-shield fa-2x"></i>
+                </div>
+                <h3 class="mb-3">Cyber Security Solutions</h3>
+                <p class="mb-0">Providing one stop cyber security solutions like IT Audit, Penetration Testing, Application Security and much more ..</p>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="service-item bg-secondary text-center px-5">
+                <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle mx-auto mb-4" style="width: 100px; height: 100px;">
+                    <i class="fa-solid fa-brain fa-2x"></i>
+                </div>
+                <h3 class="mb-3">Data Science Solution</h3>
+                <p class="mb-0">Providing advanced data analytics solution for your business growth.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- Services End -->
+
+
+<!-- Quote Start -->
+<div class="container-fluid bg-secondary px-0">
+    <div class="row g-0">
+        <div class="col-lg-6 py-6 px-5">
+            <h1 class="display-5 mb-4">Request A Free Quote</h1>
+            <p class="mb-4">We understand that each organization's  needs are unique. That's why we offer a personalized and tailored approach to ensure your business remains compliant and secure. Our team of experts is ready to assist you in developing a comprehensive strategy that suits your specific requirements.</p>
+            <form>
+                <div class="row gx-3">
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="form-floating-1" placeholder="John Doe">
+                            <label for="form-floating-1">Full Name</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="form-floating-2" placeholder="name@example.com">
+                            <label for="form-floating-2">Email address</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <select class="form-select" id="floatingSelect" aria-label="Financial Consultancy">
+                                <option selected>AML/CFT Services</option>
+                                <option value="1">Cyber Security Services</option>
+                                <option value="2">Data Science Services</option>
+                            </select>
+                            <label for="floatingSelect">Select A Service</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn btn-primary w-100 h-100" type="submit">Request A Quote</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-6" style="min-height: 400px;">
+            <div class="position-relative h-100">
+                <img class="position-absolute w-100 h-100" src="{% static 'assets/img/quote.jpg' %}" style="object-fit: cover;">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Quote End -->
+ <!-- CALL ACTION
+    ================================================== -->
+    <section class="py-1 py-md-1 bg-white">
+        
+    </section>
+</body>
+</html>
+
+{% endblock %}

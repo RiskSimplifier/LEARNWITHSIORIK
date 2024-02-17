@@ -1,0 +1,13 @@
+
+made changes in admin.py 1/1/2024
+need to make change in usercourse so that you can see their email
+made changes to checkout.html, register.html, modals.html,views.py, user_login.py,settings.py
+freeze requirement and install
+changes in settings
+why installing cyberforce if error go to django-cyforce directory using cd and install via pip install .
+made changes in model make migrations and migrate
+remove CyberSourceTransaction modal
+#create new app CAMS_Resource, made changes in url.py, settings, template_tags, add new file(custom_filters.py), add to static, CAMS_Resources, add new folder in template (CAMS_Resources)
+#created CAMS_Quiz,made changes in admin.py in SiorikLearn app
+made change in course_detail, watch_course, urls.py, 
+transfer files from templatetags

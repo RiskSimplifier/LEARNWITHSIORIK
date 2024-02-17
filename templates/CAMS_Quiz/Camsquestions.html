@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+        {% load static %}
+	
+		<title>CAMS Quiz</title>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<link type='text/css' rel='stylesheet' href='{% static 'assets/CAMS_Quiz/css/quiz.css' %}'>
+	</head>
+	<body>
+		<div id='container'>
+			<div id='title'>
+				<h1>Mock Test - <span class="text-primary">{{category.title}}</span></h1>
+				
+			</div>
+			
+   			<br/>
+  			<div id='quiz'></div>
+			  <div class="question1">
+				<div class="py-2 h5">{{question.question}}</div>
+				<br>
+
+				<form id="question_form" method="post" action="{% url 'submit_answer' category.id question.id %}">
+					{% csrf_token %}
+					<div class="ml-md-0 ml-sm-0 pl-md-0 pt-sm-0 pt-1" id="options">
+						<label class="options">
+							<input value="{{question.opt_1}}" id="option_1" type="radio" name="answer" {% if prev_answer and prev_answer.right_answer == question.opt_1 %}checked{% endif %}>
+							{{question.opt_1}}
+							<span class="checkmark"></span>
+						</label>
+						<label class="options">
+							<input value="{{question.opt_2}}" id="option_2" type="radio" name="answer" {% if prev_answer and prev_answer.right_answer == question.opt_2 %}checked{% endif %}>
+							{{question.opt_2}}
+							<span class="checkmark"></span>
+						</label>
+						<label class="options">
+							<input value="{{question.opt_3}}" id="option_3" type="radio" name="answer" {% if prev_answer and prev_answer.right_answer == question.opt_3 %}checked{% endif %}>
+							{{question.opt_3}}
+							<span class="checkmark"></span>
+						</label>
+						<label class="options">
+							<input value="{{question.opt_4}}" id="option_4" type="radio" name="answer" {% if prev_answer and prev_answer.right_answer == question.opt_4 %}checked{% endif %}>
+							{{question.opt_4}}
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<br>
+				
+					<div class="d-flex align-items-center pt-3">
+						<div id="prev">
+							{% if question.id != 1 %}
+								<button type="submit" name="previous" class="btn btn-primary prevBtn" onclick="handlePreviousClick({{ question.id }})">Previous</button>
+							{% endif %}
+						</div>
+						<div class="ml-auto mr-sm-5">
+							<button type="submit" name="submit" class="btn btn-success submitBtn">Next</button>
+						</div>
+					</div>
+				</form>
+			</div>
+        </div>
+    </div>
+    <br>
+	<br>
+    <!-- "Back to Course" button outside the container -->
+    <div class="text-center mt-4"> <!-- Adjust margin-top for spacing -->
+        <a href="{% url 'watch_course' slug='ultimate-certified-anti-money-laundering-specialistcams-certification-course' %}" class="btn btn-lg btn-primary">Back to Course</a>
+    </div>
+
+  
+		
+		<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+		<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".submitBtn").on('click', function() {
+				var _checkedAns=$("input[name='answer']:checked").val();
+				if(_checkedAns==undefined){
+					alert('Please select option');
+					return false;
+				}
+
+				
+
+			});
+		});
+
+	</script>
+	
+	
+	
+</body>
+	</html>

@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load course_tags %}
+
+{% block content %} 
+<div class="container py-8 py-lg-11">
+    <div class="row">
+        <div class="col-xl-8 mx-xl-auto">
+            <img src="{% static 'assets/img/success.png' %}" width="80px" class="img-fluid mx-auto d-block">
+            <header class="entry-header mt-4">
+                <h1 class="entry-title text-center">Order recieved</h1>
+                <p class="text-center">Thank you. Your order has been received.</p>
+            </header>
+            <div class="row border border info p-4 ">
+                <div class="col-lg-3">
+                    Order ID:<br>
+                    <strong>{{payment.order_id}}</strong>
+                </div>
+                <div class="col-lg-3">
+                    Date:<br>
+                    <strong>{{payment.date}}</strong>
+                </div>
+                <div class="col-lg-3">
+                    Total:<br>
+                    <strong> USD{{payment.course.price}}</strong>
+                </div>
+                <div class="col-lg-3">
+                    Payment method:<br>
+                    <strong>Online payments</strong>
+                </div>
+            </div>
+            <br>
+            <section class="order-details">
+                                <h2 class="order-details__title">Order details</h2>
+                                <table class="order-table">
+                                    <thead>
+                                        <tr>
+                                            <th class="product-name">Product</th>
+                                            <th class="product-total">Total</th>
+                                        </tr>
+                                    </thead>
+                            
+                                    <tbody>
+                                        <tr class="order_item">
+                                            <td class="product-name">
+                                                <a href="#">{{payment.course.title}}</a>
+                                                <strong class="product-quantity">× 1</strong>
+                                            </td>
+                                            <td class="product-total">
+                                                <span class="amount">USD {{payment.course.price}}</span>
+                                            </td>
+                                        </tr>
+                            
+                                        <tr class="order_item">
+                                            <td class="product-name">
+                                                <a href="#">Discount</a>
+                                            </td>
+                                            <td class="product-total">
+                                                <span class="amount">{{payment.course.discount}}%</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                            
+                                    <tfoot>
+                                        <tr>
+                                            <th scope="row">Subtotal:</th>
+                                            <td><span class="amount">USD {% discount_calculation payment.course.price payment.course.discount %}</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Payment method:</th>
+                                            <td>Online payments</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Total:</th>
+                                            <td><span class="amount">USD {% discount_calculation payment.course.price payment.course.discount %}</span></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </section>
+
+
+
+    <br>
+
+        </div>
+    </div>
+</div>
+{% endblock%}

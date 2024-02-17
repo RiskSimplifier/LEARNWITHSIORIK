@@ -1,0 +1,915 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% load static %}
+{% block content %} 
+{% load course_tags %}	
+    <!-- HERO
+    ================================================== -->
+    <section class="">
+        <div class="flickity-button-outset-long flickity-page-dots-white flickity-page-dots-43" data-flickity='{"pageDots": true, "prevNextButtons": false, "cellAlign": "center", "wrapAround": true,"autoPlay": "2000","imagesLoaded": true}'>
+            <div class="w-100 py-10 py-lg-12 overlay overlay-custom-gray bg-cover" style="background-image: url(static/assets/img/covers/cover-16.jpg)">
+                <div class="container my-lg-3">
+                    <div class="row align-items-center py-md-12 mx-0 text-center">
+                        <div class="col-lg-8 mx-auto">
+                            <!-- Heading -->
+                            <h1 class="display-5 fw-bold text-white mb-2 text-capitalize font-lora" data-aos="fade-left" data-aos-duration="150">
+                                Take Future in Your Hand, Be an AML/CFT Expert Today !
+                            </h1>
+
+                            <!-- Text -->
+                            {% comment %} <p class="text-white font-montserrat text-capitalize mb-5 px-xl-12" data-aos="fade-up" data-aos-duration="200">
+                                Our Courses will not only equip with practical skills but help you to achive any AML/CFT certifications.
+                            </p>  {% endcomment %}
+
+                            <!-- Buttons -->
+                            <a href="{% url 'single_course' %}" class="btn btn-slide slide-white btn-wide text-white-alone font-size-sm shadow font-montserrat fw-bold" data-aos-duration="200" data-aos="fade-up">TAKE A TOUR</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 py-10 py-lg-12 overlay overlay-custom-gray bg-cover" style="background-image: url(static/assets/img/covers/cover-14.jpg)">
+                <div class="container my-lg-3">
+                    <div class="row align-items-center py-md-12 mx-0 text-center">
+                        <div class="col-lg-8 mx-auto">
+                            <!-- Heading -->
+                            <h1 class="display-5 fw-bold text-white mb-2 text-capitalize font-lora" data-aos="fade-left" data-aos-duration="150">
+                               All you need is passion for learning and leave rest to Us !
+                            </h1>
+
+                            {% comment %} <!-- Text -->
+                            <p class="text-white font-montserrat text-capitalize mb-5 px-xl-12" data-aos="fade-up" data-aos-duration="200">
+                                Technology is brining a massive wave of evolution on learning things on different ways.
+                            </p> {% endcomment %}
+
+                            <!-- Buttons -->
+                            <a href="{% url 'single_course' %}" class="btn btn-slide slide-white btn-wide text-white-alone font-size-sm shadow font-montserrat fw-bold" data-aos-duration="200" data-aos="fade-up">TAKE A TOUR</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 py-10 py-lg-12 overlay overlay-custom-gray bg-cover" style="background-image: url(static/assets/img/covers/cover-4.jpg)">
+                <div class="container my-lg-3">
+                    <div class="row align-items-center py-md-12 mx-0 text-center">
+                        <div class="col-lg-8 mx-auto">
+                            <!-- Heading -->
+                            <h1 class="display-5 fw-bold text-white mb-2 text-capitalize font-lora" data-aos="fade-left" data-aos-duration="150">
+                                Want to be a Cyber Security Expert, we will help you prepare for it !
+                            </h1>
+
+                            {% comment %} <!-- Text -->
+                            <p class="text-white font-montserrat text-capitalize mb-5 px-xl-12" data-aos="fade-up" data-aos-duration="200">
+                                Technology is brining a massive wave of evolution on learning things on different ways.
+                            </p> {% endcomment %}
+
+                            <!-- Buttons -->
+                            <a href="{% url 'single_course' %}" class="btn btn-slide slide-white btn-wide text-white-alone font-size-sm shadow font-montserrat fw-bold" data-aos-duration="200" data-aos="fade-up">TAKE A TOUR</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 py-10 py-lg-12 overlay overlay-custom-gray bg-cover" style="background-image: url(static/assets/img/covers/cover-1.jpg)">
+                <div class="container my-lg-3">
+                    <div class="row align-items-center py-md-12 mx-0 text-center">
+                        <div class="col-lg-8 mx-auto">
+                            <!-- Heading -->
+                            <h1 class="display-5 fw-bold text-white mb-2 text-capitalize font-lora" data-aos="fade-left" data-aos-duration="150">
+                                Is your heart set to become Data Scientist, We have you covered !
+                            </h1>
+
+                            {% comment %} <!-- Text -->
+                            <p class="text-white font-montserrat text-capitalize mb-5 px-xl-12" data-aos="fade-up" data-aos-duration="200">
+                                Technology is brining a massive wave of evolution on learning things on different ways.
+                            </p> {% endcomment %}
+
+                            <!-- Buttons -->
+                            <a href="{% url 'single_course' %}" class="btn btn-slide slide-white btn-wide text-white-alone font-size-sm shadow font-montserrat fw-bold" data-aos-duration="200" data-aos="fade-up">TAKE A TOUR</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+  
+  <!-- FEATURED PRODUCT
+    ================================================== -->
+    <section class="pt-5 pb-9 py-md-11 bg-white">
+        <div class="container container-wd">
+            <div class="row align-items-end mb-7">
+                <div class="col-xl mb-5 mb-xl-0">
+                    <h1 class="mb-1">Featured Courses</h1>
+                    <p class="font-size-lg text-capitalize mb-0">Discover your perfect program in our courses.</p>
+                </div>
+                <div class="col-xl-auto">
+                    <!-- Nav -->
+                    <div class="nav justify-content-lg-start justify-content-xl-center justify-content-center tab-nav-1" id="pills-tab" role="tablist">
+                        <a class="btn-sm btn-pill me-1 mb-1 text-dark fw-medium px-6 active" id="pills-all-tab" data-bs-toggle="tab" href="#pills-all" role="tab" aria-controls="pills-all" aria-selected="true">
+                            All Categories
+                        </a>
+                        {% for i in category %}
+                        <a class="btn-sm btn-pill me-1 mb-1 text-dark fw-medium px-6" id="pills-art-tab" data-bs-toggle="tab" href="#pills-{{i.id}}" role="tab" aria-controls="pills-{{i.id}}" aria-selected="false">
+                            {{i.name}}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content flickity-tab" id="pills-tabContent">
+
+                <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
+                    <!-- Items -->
+                    <div class="mx-n4 flickity-button-outset" data-flickity='{"pageDots": true, "prevNextButtons": true, "cellAlign": "left", "wrapAround": true, "imagesLoaded": true}'>
+                       {% for i in course %}
+                    
+                        <div class="col-12 col-md-6 col-xl-4 col-wd-3 pb-4 pb-md-7" style="padding-right:15px;padding-left:15px;">
+                            <!-- Card -->
+                            <div class="card border shadow p-2 rounded-lg sk-fade">
+                                <!-- Image -->
+                                <div class="card-zoom position-relative">
+                                    <div class="badge-float sk-fade-top top-0 right-0 mt-4 me-4">
+                                        <a href="{{i.get_absolute_url}}" class="btn btn-xs btn-dark text-white rounded-circle lift opacity-dot-7 me-1 p-2 d-inline-flex justify-content-center align-items-center w-36 h-36">
+                                            <!-- Icon -->
+                                            <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17.8856 8.64995C17.7248 8.42998 13.8934 3.26379 8.99991 3.26379C4.10647 3.26379 0.274852 8.42998 0.114223 8.64974C-0.0380743 8.85843 -0.0380743 9.14147 0.114223 9.35016C0.274852 9.57013 4.10647 14.7363 8.99991 14.7363C13.8934 14.7363 17.7248 9.5701 17.8856 9.35034C18.0381 9.14169 18.0381 8.85843 17.8856 8.64995ZM8.99991 13.5495C5.39537 13.5495 2.27345 10.1206 1.3493 8.99965C2.27226 7.87771 5.38764 4.4506 8.99991 4.4506C12.6043 4.4506 15.726 7.8789 16.6505 9.00046C15.7276 10.1224 12.6122 13.5495 8.99991 13.5495Z" fill="currentColor"/>
+                                                <path d="M8.9999 5.43958C7.03671 5.43958 5.43945 7.03683 5.43945 9.00003C5.43945 10.9632 7.03671 12.5605 8.9999 12.5605C10.9631 12.5605 12.5603 10.9632 12.5603 9.00003C12.5603 7.03683 10.9631 5.43958 8.9999 5.43958ZM8.9999 11.3736C7.69103 11.3736 6.62629 10.3089 6.62629 9.00003C6.62629 7.6912 7.69107 6.62642 8.9999 6.62642C10.3087 6.62642 11.3735 7.6912 11.3735 9.00003C11.3735 10.3089 10.3088 11.3736 8.9999 11.3736Z" fill="currentColor"/>
+                                            </svg>
+
+                                        </a>
+                                        <a href="{{i.get_absolute_url}}" class="btn btn-xs btn-dark text-white rounded-circle lift opacity-dot-7 p-2 d-inline-flex justify-content-center align-items-center w-36 h-36">
+                                            <!-- Icon -->
+                                            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M11.2437 1.20728C10.0203 1.20728 8.87397 1.66486 7.99998 2.48357C7.12598 1.66486 5.97968 1.20728 4.7563 1.20728C2.13368 1.20728 0 3.341 0 5.96366C0 7.2555 0.425164 8.52729 1.26366 9.74361C1.91197 10.6841 2.80887 11.5931 3.92937 12.4454C5.809 13.8753 7.66475 14.6543 7.74285 14.6867L7.99806 14.7928L8.25384 14.6881C8.33199 14.6562 10.1889 13.8882 12.0696 12.4635C13.1907 11.6142 14.0881 10.7054 14.7367 9.7625C15.575 8.54385 16 7.26577 16 5.96371C16 3.341 13.8663 1.20728 11.2437 1.20728ZM8.00141 13.3353C6.74962 12.7555 1.33966 10.0142 1.33966 5.96366C1.33966 4.07969 2.87237 2.54698 4.75634 2.54698C5.827 2.54698 6.81558 3.03502 7.46862 3.88598L8.00002 4.57845L8.53142 3.88598C9.18446 3.03502 10.173 2.54698 11.2437 2.54698C13.1276 2.54698 14.6604 4.07969 14.6604 5.96366C14.6603 10.0433 9.25265 12.7613 8.00141 13.3353Z" fill="currentColor"/>
+                                            </svg>
+
+                                        </a>
+                                    </div>
+
+                                    <a href="{{i.get_absolute_url}}" class="card-img sk-thumbnail img-ratio-9 d-block">
+                                        <img class="rounded shadow-light-lg" src="{{i.featured_image.url}}" alt="...">
+                                    </a>
+
+                                    <span class="badge sk-fade-bottom badge-lg badge-primary badge-pill badge-float bottom-0 left-0 mb-4 ms-4 fw-bold">
+                                        <span class="text-white text-uppercase fw-bold font-size-xs">Discount {{i.discount}} %</span>
+                                    </span>
+                                </div>
+
+                                <!-- Footer -->
+                                <div class="card-footer px-2 pb-2 mb-1 pt-4 position-relative">
+                                    <a href="{{i.get_absolute_url}}" class="d-block">
+                                        <div class="avatar avatar-xl badge-float position-absolute top-0 right-0 mt-n6 me-5 rounded-circle shadow border border-white border-w-lg">
+                                            <img src="{{i.author.author_profile.url}}" alt="..." class="avatar-img rounded-circle">
+                                        </div>
+                                    </a>
+
+                                    <!-- Preheading -->
+                                    <a href="{{i.get_absolute_url}}"><span class="mb-1 d-inline-block text-gray-800">{{i.category.name}}</span></a>
+
+
+                                    <!-- Heading -->
+                                    <div class="position-relative">
+                                        <a href="{{i.get_absolute_url}}" class="d-block stretched-link"><h4 class="line-clamp-2 h-md-48 h-lg-58 me-md-6 me-lg-10 me-xl-4 mb-2">{{ i.title }}</h4></a>
+
+                                        <div class="d-lg-flex align-items-end flex-wrap mb-n1">
+                                            <div class="star-rating mb-2 mb-lg-0 me-lg-3">
+                                                <div class="rating" style="width:95%;"></div>
+                                            </div>
+
+                                            <div class="font-size-sm">
+                                                <span>5.45 </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mx-n2 align-items-end">
+                                            <div class="col px-2">
+                                                <ul class="nav mx-n3">
+                                                    <li class="nav-item px-3">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="me-2 d-flex icon-uxs text-secondary">
+                                                                <!-- Icon -->
+                                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                     <path d="M17.1947 7.06802L14.6315 7.9985C14.2476 7.31186 13.712 6.71921 13.0544 6.25992C12.8525 6.11877 12.6421 5.99365 12.4252 5.88303C13.0586 5.25955 13.452 4.39255 13.452 3.43521C13.452 1.54098 11.9124 -1.90735e-06 10.0197 -1.90735e-06C8.12714 -1.90735e-06 6.58738 1.54098 6.58738 3.43521C6.58738 4.39255 6.98075 5.25955 7.61414 5.88303C7.39731 5.99365 7.1869 6.11877 6.98502 6.25992C6.32752 6.71921 5.79178 7.31186 5.40787 7.9985L2.8447 7.06802C2.33612 6.88339 1.79688 7.26044 1.79688 7.80243V16.5178C1.79688 16.8465 2.00256 17.14 2.31155 17.2522L9.75312 19.9536C9.93073 20.018 10.1227 20.0128 10.2863 19.9536L17.7278 17.2522C18.0368 17.14 18.2425 16.8465 18.2425 16.5178V7.80243C18.2425 7.26135 17.704 6.88309 17.1947 7.06802ZM10.0197 1.5625C11.0507 1.5625 11.8895 2.40265 11.8895 3.43521C11.8895 4.46777 11.0507 5.30792 10.0197 5.30792C8.98866 5.30792 8.14988 4.46777 8.14988 3.43521C8.14988 2.40265 8.98866 1.5625 10.0197 1.5625ZM9.23844 18.1044L3.35938 15.9703V8.91724L9.23844 11.0513V18.1044ZM10.0197 9.67255L6.90644 8.54248C7.58164 7.51892 8.75184 6.87042 10.0197 6.87042C11.2875 6.87042 12.4577 7.51892 13.1329 8.54248L10.0197 9.67255ZM16.68 15.9703L10.8009 18.1044V11.0513L16.68 8.91724V15.9703Z" fill="currentColor"/> 
+                                                                </svg>
+
+                                                            </div>
+                                                           
+                                                            <div class="font-size-sm"></div>
+                                                             <div class="font-size-sm">{{i.videos.all.count}} lessons</div> 
+                                                         
+                                                        </div>
+                                                    </li>
+                                                    <li class="nav-item px-3">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="me-2 d-flex icon-uxs text-secondary">
+                                                                <!-- Icon -->
+                                                                <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                                                    {% comment %} <path d="M14.3164 4.20996C13.985 4.37028 13.8464 4.76904 14.0067 5.10026C14.4447 6.00505 14.6667 6.98031 14.6667 8C14.6667 11.6759 11.6759 14.6667 8 14.6667C4.32406 14.6667 1.33333 11.6759 1.33333 8C1.33333 4.32406 4.32406 1.33333 8 1.33333C9.52328 1.33333 10.9543 1.83073 12.1387 2.77165C12.4259 3.00098 12.846 2.95296 13.0754 2.66471C13.3047 2.37663 13.2567 1.95703 12.9683 1.72803C11.5661 0.613607 9.8016 0 8 0C3.58903 0 0 3.58903 0 8C0 12.411 3.58903 16 8 16C12.411 16 16 12.411 16 8C16 6.77767 15.7331 5.60628 15.2067 4.51969C15.0467 4.18766 14.6466 4.04932 14.3164 4.20996Z" fill="currentColor"/>
+                                                                    <path d="M7.99967 2.66663C7.63167 2.66663 7.33301 2.96529 7.33301 3.33329V7.99996C7.33301 8.36796 7.63167 8.66663 7.99967 8.66663H11.333C11.701 8.66663 11.9997 8.36796 11.9997 7.99996C11.9997 7.63196 11.701 7.33329 11.333 7.33329H8.66634V3.33329C8.66634 2.96529 8.36768 2.66663 7.99967 2.66663Z" fill="currentColor"/> {% endcomment %}
+                                                                </svg>
+
+                                                            </div>
+                                                            <div class="font-size-sm"></div>
+                                                            {% comment %} <div class="font-size-sm">8h 12m</div> {% endcomment %}
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            {% if i.price == 0 %}
+                                            <div class="col-auto px-2 text-right">
+                                                <ins class="h4 mb-0 d-block mb-lg-n1"><a href="#" class="badge badge-primary">FREE</a></ins>
+                                            </div>
+    
+                                            {% else %}
+                                            <div class="col-auto px-2 text-right">
+                                                <del class="font-size-sm">$ {{i.price}}</del>
+                                                <ins class="h4 mb-0 d-block mb-lg-n1">$ {% discount_calculation i.price i.discount %}</ins>
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     
+                         {% endfor %}
+                    </div>
+                </div>
+
+
+            {% for cat in category %}
+
+
+                <div class="tab-pane fade" id="pills-{{cat.id}}" role="tabpanel" aria-labelledby="pills-art-tab">
+                    <!-- Items -->
+                    <div class="mx-n4 flickity-button-outset" data-flickity='{"pageDots": true, "prevNextButtons": true, "cellAlign": "left", "wrapAround": true, "imagesLoaded": true}'>
+
+                        {% for i in course %}
+                       
+                           {% if i.category.id == cat.id %}
+                        <div class="col-12 col-md-6 col-xl-4 col-wd-3 pb-4 pb-md-7" style="padding-right:15px;padding-left:15px;">
+                            <!-- Card -->
+                            <div class="card border shadow p-2 rounded-lg sk-fade">
+                                <!-- Image -->
+                                <div class="card-zoom position-relative">
+                                    <div class="badge-float sk-fade-top top-0 right-0 mt-4 me-4">
+                                        <a href="#" class="btn btn-xs btn-dark text-white rounded-circle lift opacity-dot-7 me-1 p-2 d-inline-flex justify-content-center align-items-center w-36 h-36">
+                                            <!-- Icon -->
+                                            <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17.8856 8.64995C17.7248 8.42998 13.8934 3.26379 8.99991 3.26379C4.10647 3.26379 0.274852 8.42998 0.114223 8.64974C-0.0380743 8.85843 -0.0380743 9.14147 0.114223 9.35016C0.274852 9.57013 4.10647 14.7363 8.99991 14.7363C13.8934 14.7363 17.7248 9.5701 17.8856 9.35034C18.0381 9.14169 18.0381 8.85843 17.8856 8.64995ZM8.99991 13.5495C5.39537 13.5495 2.27345 10.1206 1.3493 8.99965C2.27226 7.87771 5.38764 4.4506 8.99991 4.4506C12.6043 4.4506 15.726 7.8789 16.6505 9.00046C15.7276 10.1224 12.6122 13.5495 8.99991 13.5495Z" fill="currentColor"/>
+                                                <path d="M8.9999 5.43958C7.03671 5.43958 5.43945 7.03683 5.43945 9.00003C5.43945 10.9632 7.03671 12.5605 8.9999 12.5605C10.9631 12.5605 12.5603 10.9632 12.5603 9.00003C12.5603 7.03683 10.9631 5.43958 8.9999 5.43958ZM8.9999 11.3736C7.69103 11.3736 6.62629 10.3089 6.62629 9.00003C6.62629 7.6912 7.69107 6.62642 8.9999 6.62642C10.3087 6.62642 11.3735 7.6912 11.3735 9.00003C11.3735 10.3089 10.3088 11.3736 8.9999 11.3736Z" fill="currentColor"/>
+                                            </svg>
+
+                                        </a>
+                                        <a href="#" class="btn btn-xs btn-dark text-white rounded-circle lift opacity-dot-7 p-2 d-inline-flex justify-content-center align-items-center w-36 h-36">
+                                            <!-- Icon -->
+                                            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M11.2437 1.20728C10.0203 1.20728 8.87397 1.66486 7.99998 2.48357C7.12598 1.66486 5.97968 1.20728 4.7563 1.20728C2.13368 1.20728 0 3.341 0 5.96366C0 7.2555 0.425164 8.52729 1.26366 9.74361C1.91197 10.6841 2.80887 11.5931 3.92937 12.4454C5.809 13.8753 7.66475 14.6543 7.74285 14.6867L7.99806 14.7928L8.25384 14.6881C8.33199 14.6562 10.1889 13.8882 12.0696 12.4635C13.1907 11.6142 14.0881 10.7054 14.7367 9.7625C15.575 8.54385 16 7.26577 16 5.96371C16 3.341 13.8663 1.20728 11.2437 1.20728ZM8.00141 13.3353C6.74962 12.7555 1.33966 10.0142 1.33966 5.96366C1.33966 4.07969 2.87237 2.54698 4.75634 2.54698C5.827 2.54698 6.81558 3.03502 7.46862 3.88598L8.00002 4.57845L8.53142 3.88598C9.18446 3.03502 10.173 2.54698 11.2437 2.54698C13.1276 2.54698 14.6604 4.07969 14.6604 5.96366C14.6603 10.0433 9.25265 12.7613 8.00141 13.3353Z" fill="currentColor"/>
+                                            </svg>
+
+                                        </a>
+                                    </div>
+
+                                    <a href="{{i.get_absolute_url}}" class="card-img sk-thumbnail img-ratio-9 d-block">
+                                        <img class="rounded shadow-light-lg" src="{{i.featured_image.url}}" alt="...">
+                                    </a>
+
+                                    <span class="badge sk-fade-bottom badge-lg badge-primary badge-pill badge-float bottom-0 left-0 mb-4 ms-4">
+                                        <span class="text-white text-uppercase fw-bold font-size-xs">Discount {{i.discount}} %</span>
+                                    </span>
+                                </div>
+
+                                <!-- Footer -->
+                                <div class="card-footer px-2 pb-2 mb-1 pt-4 position-relative">
+                                    <a href="{{i.get_absolute_url}}" class="d-block">
+                                        <div class="avatar avatar-xl badge-float position-absolute top-0 right-0 mt-n6 me-5 rounded-circle shadow border border-white border-w-lg">
+                                            <img src="{{i.author.author_profile.url}}" alt="..." class="avatar-img rounded-circle">
+                                        </div>
+                                    </a>
+
+                                    <!-- Preheading -->
+                                    <a href="{{i.get_absolute_url}}"><span class="mb-1 d-inline-block text-gray-800">{{i.category}}</span></a>
+
+
+                                    <!-- Heading -->
+                                    <div class="position-relative">
+                                        <a href="{{i.get_absolute_url}}" class="d-block stretched-link"><h4 class="line-clamp-2 h-md-48 h-lg-58 me-md-6 me-lg-10 me-xl-4 mb-2">{{i.title}}</h4></a>
+
+                                        <div class="d-lg-flex align-items-end flex-wrap mb-n1">
+                                            <div class="star-rating mb-2 mb-lg-0 me-lg-3">
+                                                <div class="rating" style="width:95%;"></div>
+                                            </div>
+
+                                            <div class="font-size-sm">
+                                                <span>5.45 </span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="row mx-n2 align-items-end">
+                                         
+                                            <div class="col px-2">
+                                                <ul class="nav mx-n3">
+                                                    <li class="nav-item px-3">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="me-2 d-flex icon-uxs text-secondary">
+                                                                <!-- Icon -->
+                                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M17.1947 7.06802L14.6315 7.9985C14.2476 7.31186 13.712 6.71921 13.0544 6.25992C12.8525 6.11877 12.6421 5.99365 12.4252 5.88303C13.0586 5.25955 13.452 4.39255 13.452 3.43521C13.452 1.54098 11.9124 -1.90735e-06 10.0197 -1.90735e-06C8.12714 -1.90735e-06 6.58738 1.54098 6.58738 3.43521C6.58738 4.39255 6.98075 5.25955 7.61414 5.88303C7.39731 5.99365 7.1869 6.11877 6.98502 6.25992C6.32752 6.71921 5.79178 7.31186 5.40787 7.9985L2.8447 7.06802C2.33612 6.88339 1.79688 7.26044 1.79688 7.80243V16.5178C1.79688 16.8465 2.00256 17.14 2.31155 17.2522L9.75312 19.9536C9.93073 20.018 10.1227 20.0128 10.2863 19.9536L17.7278 17.2522C18.0368 17.14 18.2425 16.8465 18.2425 16.5178V7.80243C18.2425 7.26135 17.704 6.88309 17.1947 7.06802ZM10.0197 1.5625C11.0507 1.5625 11.8895 2.40265 11.8895 3.43521C11.8895 4.46777 11.0507 5.30792 10.0197 5.30792C8.98866 5.30792 8.14988 4.46777 8.14988 3.43521C8.14988 2.40265 8.98866 1.5625 10.0197 1.5625ZM9.23844 18.1044L3.35938 15.9703V8.91724L9.23844 11.0513V18.1044ZM10.0197 9.67255L6.90644 8.54248C7.58164 7.51892 8.75184 6.87042 10.0197 6.87042C11.2875 6.87042 12.4577 7.51892 13.1329 8.54248L10.0197 9.67255ZM16.68 15.9703L10.8009 18.1044V11.0513L16.68 8.91724V15.9703Z" fill="currentColor"/>
+                                                                </svg>
+
+                                                            </div>
+                                                            
+                                                           
+                                                            <div class="font-size-sm">{{i.videos.all.count}} lessons</div>
+                                                      
+                                                        </div>
+                                                    </li>
+                                                    {% comment %} <li class="nav-item px-3">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="me-2 d-flex icon-uxs text-secondary">
+                                                                <!-- Icon -->
+                                                                <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M14.3164 4.20996C13.985 4.37028 13.8464 4.76904 14.0067 5.10026C14.4447 6.00505 14.6667 6.98031 14.6667 8C14.6667 11.6759 11.6759 14.6667 8 14.6667C4.32406 14.6667 1.33333 11.6759 1.33333 8C1.33333 4.32406 4.32406 1.33333 8 1.33333C9.52328 1.33333 10.9543 1.83073 12.1387 2.77165C12.4259 3.00098 12.846 2.95296 13.0754 2.66471C13.3047 2.37663 13.2567 1.95703 12.9683 1.72803C11.5661 0.613607 9.8016 0 8 0C3.58903 0 0 3.58903 0 8C0 12.411 3.58903 16 8 16C12.411 16 16 12.411 16 8C16 6.77767 15.7331 5.60628 15.2067 4.51969C15.0467 4.18766 14.6466 4.04932 14.3164 4.20996Z" fill="currentColor"/>
+                                                                    <path d="M7.99967 2.66663C7.63167 2.66663 7.33301 2.96529 7.33301 3.33329V7.99996C7.33301 8.36796 7.63167 8.66663 7.99967 8.66663H11.333C11.701 8.66663 11.9997 8.36796 11.9997 7.99996C11.9997 7.63196 11.701 7.33329 11.333 7.33329H8.66634V3.33329C8.66634 2.96529 8.36768 2.66663 7.99967 2.66663Z" fill="currentColor"/>
+                                                                </svg>
+
+                                                            </div>
+                                                            
+                                                            <div class="font-size-sm">{{ total_duration // 60 }} hours and {{ total_duration % 60 }} minutes</div>
+                                                            
+                                                        </div>
+                                                    </li> {% endcomment %}
+                                                   
+                                                </ul>
+                                            </div>
+                                     
+                                            <div class="col-auto px-2 text-right">
+                                                <del class="font-size-sm">$ {{i.price}}</del>
+                                                <ins class="h4 mb-0 d-block mb-lg-n1">$ {% discount_calculation i.price i.discount %}</ins>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                           {% else %}
+
+                          {% endif %}
+                          
+                        {% endfor %}
+
+                    </div>
+                </div>
+
+            {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIES ================================================== -->
+    <section class="py-5 py-md-8 bg-white">
+        <div class="container container-wd">
+            <div class="row align-items-end mb-md-7 mb-4">
+                <div class="col-md mb-4 mb-md-0">
+                    <h1 class="mb-1">Trending Categories</h1>
+                    <p class="font-size-lg mb-0 text-capitalize">Chose Your Subject of the Study.</p>
+                </div>
+                <div class="col-md-auto">
+                    <a href="course-list-v6.html" class="d-flex align-items-center fw-medium">
+                        Browse All
+                        <div class="ms-2 d-flex">
+                            <!-- Icon -->
+                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.7779 4.6098L3.32777 0.159755C3.22485 0.0567475 3.08745 0 2.94095 0C2.79445 0 2.65705 0.0567475 2.55412 0.159755L2.2264 0.487394C2.01315 0.700889 2.01315 1.04788 2.2264 1.26105L5.96328 4.99793L2.22225 8.73895C2.11933 8.84196 2.0625 8.97928 2.0625 9.1257C2.0625 9.27228 2.11933 9.4096 2.22225 9.51269L2.54998 9.84025C2.65298 9.94325 2.7903 10 2.9368 10C3.0833 10 3.2207 9.94325 3.32363 9.84025L7.7779 5.38614C7.88107 5.2828 7.93774 5.14484 7.93741 4.99817C7.93774 4.85094 7.88107 4.71305 7.7779 4.6098Z" fill="currentColor"/>
+                            </svg>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row row-cols-2 row-cols-md-3 row-cols-xl-5 row-cols-wd-6">
+                {% for i in category %}
+                <div class="col mb-md-6 mb-4 px-2 px-md-4">
+                    <!-- Card -->
+                    <a href="course-list-v6.html" class="card bg-lavender hover-gradient-1 rounded-lg p-md-5 p-3 h-210p text-center lift">
+                        <!-- Image -->
+                        <div class="mt-7 text-gigas display-4">
+                            <i class="{{i.icon}}"></i>
+
+                            <!-- Footer -->
+                            <div class="card-footer px-0 pb-0 pt-4">
+                                <h5 class="mb-0 line-clamp-2 text-gigas">{{i.name}}</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG
+    ================================================== -->
+    <section class="py-5 py-md-8 bg-white">
+        <div class="container container-wd">
+            <div class="row align-items-end mb-4 mb-md-7">
+                <div class="col-md mb-4 mb-md-0">
+                    <h1 class="mb-1">Latest Blogs</h1>
+                    <p class="font-size-lg mb-0 text-capitalize">Discover your desire career path.</p>
+                </div>
+                <div class="col-md-auto">
+                    <a href="{% url 'blog' %}" class="d-flex align-items-center fw-medium">
+                        Browse All
+                        <div class="ms-2 d-flex">
+                            <!-- Icon -->
+                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.7779 4.6098L3.32777 0.159755C3.22485 0.0567475 3.08745 0 2.94095 0C2.79445 0 2.65705 0.0567475 2.55412 0.159755L2.2264 0.487394C2.01315 0.700889 2.01315 1.04788 2.2264 1.26105L5.96328 4.99793L2.22225 8.73895C2.11933 8.84196 2.0625 8.97928 2.0625 9.1257C2.0625 9.27228 2.11933 9.4096 2.22225 9.51269L2.54998 9.84025C2.65298 9.94325 2.7903 10 2.9368 10C3.0833 10 3.2207 9.94325 3.32363 9.84025L7.7779 5.38614C7.88107 5.2828 7.93774 5.14484 7.93741 4.99817C7.93774 4.85094 7.88107 4.71305 7.7779 4.6098Z" fill="currentColor"/>
+                            </svg>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+                {% for b in blog %}
+                <div class="col-md mb-5 mb-lg-0">
+                    <!-- Card -->
+                    <div class="card border shadow p-2 rounded-lg lift sk-fade">
+                        <!-- Image -->
+                        <div class="card-zoom position-relative">
+                            <a href="{{b.website_url}}" class="card-img d-block sk-thumbnail img-ratio-3"><img class="rounded shadow-light-lg img-fluid" src="{{b.blog_image.url}}" alt="..."></a>
+
+                            <a href="#" class="badge sk-fade-bottom badge-lg badge-purple badge-pill badge-float bottom-0 left-0 mb-4 ms-4 px-5 me-4">
+                                <span class="text-white fw-normal font-size-sm">{{b.blog_category}}</span>
+                            </a>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="card-footer px-2 pb-0 pt-4">
+                            <ul class="nav mx-n3 mb-3">
+                                <li class="nav-item px-3">
+                                    <a href="{{b.website_url}}" class="d-flex align-items-center text-gray-800">
+                                        <div class="me-3 d-flex">
+                                            <!-- Icon -->
+                                            <svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13.8102 9.52183C13.313 9.08501 12.7102 8.70758 12.0181 8.40008C11.7223 8.2687 11.3761 8.40191 11.2447 8.69762C11.1134 8.99334 11.2466 9.33952 11.5423 9.47102C12.1258 9.73034 12.6287 10.0436 13.0367 10.4021C13.5396 10.8441 13.8281 11.484 13.8281 12.1582V13.2422C13.8281 13.5653 13.5653 13.8281 13.2422 13.8281H1.75781C1.43475 13.8281 1.17188 13.5653 1.17188 13.2422V12.1582C1.17188 11.484 1.46038 10.8441 1.96335 10.4021C2.55535 9.88186 4.2802 8.67188 7.5 8.67188C9.89079 8.67188 11.8359 6.72672 11.8359 4.33594C11.8359 1.94515 9.89079 0 7.5 0C5.10921 0 3.16406 1.94515 3.16406 4.33594C3.16406 5.7336 3.82896 6.97872 4.85893 7.77214C2.97432 8.18642 1.80199 8.98384 1.18984 9.52183C0.433731 10.1862 0 11.147 0 12.1582V13.2422C0 14.2115 0.788498 15 1.75781 15H13.2422C14.2115 15 15 14.2115 15 13.2422V12.1582C15 11.147 14.5663 10.1862 13.8102 9.52183ZM4.33594 4.33594C4.33594 2.59129 5.75535 1.17188 7.5 1.17188C9.24465 1.17188 10.6641 2.59129 10.6641 4.33594C10.6641 6.08059 9.24465 7.5 7.5 7.5C5.75535 7.5 4.33594 6.08059 4.33594 4.33594Z" fill="currentColor"/>
+                                            </svg>
+
+                                        </div>
+                                        <div class="font-size-sm">{{b.blog_author}}</div>
+                                    </a>
+                                </li>
+                                <li class="nav-item px-3">
+                                    <a href="blog-single.html" class="d-flex align-items-center text-gray-800">
+                                        <div class="me-2 d-flex">
+                                            <!-- Icon -->
+                                            <svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13.0664 1.17188H11.7188V0.46875C11.7188 0.209883 11.5089 0 11.25 0C10.9911 0 10.7812 0.209883 10.7812 0.46875V1.17188H4.21875V0.46875C4.21875 0.209883 4.0089 0 3.75 0C3.4911 0 3.28125 0.209883 3.28125 0.46875V1.17188H1.93359C0.867393 1.17188 0 2.03927 0 3.10547V13.0664C0 14.1326 0.867393 15 1.93359 15H13.0664C14.1326 15 15 14.1326 15 13.0664V3.10547C15 2.03927 14.1326 1.17188 13.0664 1.17188ZM1.93359 2.10938H3.28125V2.57812C3.28125 2.83699 3.4911 3.04688 3.75 3.04688C4.0089 3.04688 4.21875 2.83699 4.21875 2.57812V2.10938H10.7812V2.57812C10.7812 2.83699 10.9911 3.04688 11.25 3.04688C11.5089 3.04688 11.7188 2.83699 11.7188 2.57812V2.10938H13.0664C13.6157 2.10938 14.0625 2.55621 14.0625 3.10547V4.21875H0.9375V3.10547C0.9375 2.55621 1.38434 2.10938 1.93359 2.10938ZM13.0664 14.0625H1.93359C1.38434 14.0625 0.9375 13.6157 0.9375 13.0664V5.15625H14.0625V13.0664C14.0625 13.6157 13.6157 14.0625 13.0664 14.0625Z" fill="currentColor"/>
+                                            </svg>
+
+                                        </div>
+                                        <div class="font-size-sm">{{b.blog_date}}</div>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <!-- Heading -->
+                            <a href="blog-single.html" class="d-block"><h5 class="line-clamp-2 h-48 h-lg-52">{{b.blog_title}}</h5></a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+  
+			</div>
+        </div>
+    </section>
+
+
+ <!-- TESTIMONIAL
+    ================================================== -->
+    <section class="position-relative bg-shark jarallax" data-jarallax data-speed=".8" style="background-image: url(assets/img/illustrations/illustration-3.svg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 order-md-2">
+                    <div class="bg-cover h-100 vw-sm-100 vw-lg-50 mx-n4 mx-md-n7 mx-lg-0 py-12 py-lg-0 d-flex place-center text-center" style="background-image: url(static/assets/img/covers/cover-10.jpg);">
+                        <!-- Button -->
+                        <a href="https://youtu.be/E75dOdIjiCE" class="btn h-90p size-30-all w-90p mx-auto rounded-circle btn-white d-inline-flex align-items-center justify-content-center shadow lift" data-fancybox>
+                            <!-- Icon -->
+                            <svg width="14" height="16" viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.8704 6.15374L3.42038 0.328572C2.73669 -0.0923355 1.9101 -0.109836 1.20919 0.281759C0.508282 0.673291 0.0898438 1.38645 0.0898438 2.18929V13.7866C0.0898438 15.0005 1.06797 15.9934 2.27016 16C2.27344 16 2.27672 16 2.27994 16C2.65563 16 3.04713 15.8822 3.41279 15.6591C3.70694 15.4796 3.79991 15.0957 3.62044 14.8016C3.44098 14.5074 3.05697 14.4144 2.76291 14.5939C2.59188 14.6982 2.42485 14.7522 2.27688 14.7522C1.82328 14.7497 1.33763 14.3611 1.33763 13.7866V2.18933C1.33763 1.84492 1.51713 1.53907 1.81775 1.3711C2.11841 1.20314 2.47294 1.21064 2.76585 1.39098L12.2159 7.21615C12.4999 7.39102 12.6625 7.68262 12.6618 8.01618C12.6611 8.34971 12.4974 8.64065 12.2118 8.81493L5.37935 12.9983C5.08548 13.1783 4.9931 13.5623 5.17304 13.8562C5.35295 14.1501 5.73704 14.2424 6.03092 14.0625L12.8625 9.87962C13.5166 9.48059 13.9081 8.78496 13.9096 8.01868C13.9112 7.25249 13.5226 6.55524 12.8704 6.15374Z" fill="currentColor"/>
+                            </svg>
+
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 order-md-1 py-8 pb-10 pt-md-12 pb-md-14">
+                    <h2 class="text-white mb-1">WHAT OUR STUDENTS HAVE TO SAY</h2>
+                    <p class="font-size-lg mb-8 text-capitalize">Discover your perfect program in our courses.</p>
+
+                    <div class="pb-4 flickity-dot-left flickity-dot-yellow" data-flickity='{"pageDots": true, "prevNextButtons": false, "cellAlign": "left", "wrapAround": true, "imagesLoaded": true}'>
+                        <div class="w-100">
+                            <div class="row gx-0 align-items-center mb-6">
+                                <div class="col-auto">
+                                    <div class="avatar avatar-custom">
+                                        <img src="{% static 'assets/img/avatars/munu.png' %}" alt="..." class="avatar-img rounded-circle img-fluid">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card-body p-0 ms-5">
+                                        <h5 class="mb-0 text-turbo">Munu S</h5>
+                                        <span class="text-white">Banker</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="text-white mb-6 pe-xl-10 text-capitalize">“I am extremely grateful to the tutor for the help they gave to me to pass CAMS exam. I went into the exam with greater confidence and really felt like the course helped a lot. I found the teaching style great."</p>
+                        </div>
+
+                        <div class="w-100">
+                            <div class="row gx-0 align-items-center mb-6">
+                                <div class="col-auto">
+                                    <div class="avatar avatar-custom">
+                                        <img src="{% static 'assets/img/avatars/manish.jpg' %}" alt="..." class="avatar-img rounded-circle img-fluid">
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="card-body p-0 ms-5">
+                                        <h5 class="mb-0 text-turbo">Manish Thakuri</h5>
+                                        <span class="text-white">Banker</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="text-white mb-6 pe-xl-10 text-capitalize">“I wanted to change my career in AML/CFT. Luckily I found this course. Instructor was knowledgeable, friendly and supportive. I am really confident now, that I can pass this exam."</p>
+                        </div>
+
+                        <div class="w-100">
+                            <div class="row gx-0 align-items-center mb-6">
+                                <div class="col-auto">
+                                    <div class="avatar avatar-custom">
+                                        <img src="{% static 'assets/img/avatars/mishu.png' %}" alt="..." class="avatar-img rounded-circle img-fluid">
+                                    </div>
+                                </div>
+
+                                
+                                <div class="col">
+                                    <div class="card-body p-0 ms-5">
+                                        <h5 class="mb-0 text-turbo">Mishu Shrestha</h5>
+                                        <span class="text-white">Student</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="text-white mb-6 pe-xl-10 text-capitalize">“My thanks go out to Tutor for the support and patience especially at this time. The technical help we have had has been amazing.I have really enjoyed the lessons which are tailored specifically to create a competent AML/CFT expert.."</p>
+                        </div>
+
+					</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+<!-- INSTRUCTORS
+    ================================================== -->
+    <section class="pt-8 pb-10 pt-md-11 pb-md-12" data-jarallax data-speed=".8" style="background-image: url(static/assets/img/covers/cover-3.jpg);" data-aos="fade-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 mx-auto text-center" data-aos="fade-up">
+                    <h3 class="text-black mb-2" >OUR INSTRUCTOR</h3>
+                    <h1 class="text-black mb-1" >KIRAN KUMAR SHAH</h1>
+                    <h5 class="text-black mb-8 text-capitalize"> FCCA|M.A in Eco|DipIFRS|CAMS|CAMS-AUDIT|CFE|CISA|CISSP</h5>
+                    <p class="text-black mb-8" >I am Risk Management Professional with knowledge and experience in different risk management areas including IT Audit, AML/CFT, Compliance, Cyber Security and Data Science. In my 14 years of experience in different commercial banks, I was responsible for establishing Risk management governance, IT Audit, creating policies and procedures, providing training, conducting financial investigations, and developing machine learning model.Under my leadership, Kumari Bank became one of the first five banks out of 28 commercial banks to go live for goAML in 2019.</p>
+                    <a href="course-list-v3.html" class="d-inline-flex align-items-center fw-medium text-white mb-8">
+                        Browse All
+                        <div class="ms-2 d-flex">
+                            <!-- Icon -->
+                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.7779 4.6098L3.32777 0.159755C3.22485 0.0567475 3.08745 0 2.94095 0C2.79445 0 2.65705 0.0567475 2.55412 0.159755L2.2264 0.487394C2.01315 0.700889 2.01315 1.04788 2.2264 1.26105L5.96328 4.99793L2.22225 8.73895C2.11933 8.84196 2.0625 8.97928 2.0625 9.1257C2.0625 9.27228 2.11933 9.4096 2.22225 9.51269L2.54998 9.84025C2.65298 9.94325 2.7903 10 2.9368 10C3.0833 10 3.2207 9.94325 3.32363 9.84025L7.7779 5.38614C7.88107 5.2828 7.93774 5.14484 7.93741 4.99817C7.93774 4.85094 7.88107 4.71305 7.7779 4.6098Z" fill="currentColor"/>
+                            </svg>
+
+                        </div>
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+      <!-- COUNTUP
+    ================================================== -->
+    <div class="py-5 pt-md-11 bg-white">
+        <div class="container">
+            <div class="row w-xl-96 mx-xl-auto text-center">
+                <div class="col-md-3 mb-6 mb-md-0">
+                    <div class="h1"><span data-toggle="countup" data-from="0" data-to="5" data-aos data-aos-id="countup:in"></span>k+</div>
+                    <p class="font-size-lg fw-medium mb-0">Students</p>
+                </div>
+
+                <div class="col-md-3 mb-6 mb-md-0">
+                    <div class="h1"><span data-toggle="countup" data-from="0" data-to="3" data-aos data-aos-id="countup:in"></span>k+</div>
+                    <p class="font-size-lg fw-medium mb-0">Youtube Fans</p>
+                </div>
+
+                <div class="col-md-3 mb-6 mb-md-0">
+                    <div class="h1"><span data-toggle="countup" data-from="0" data-to="15" data-aos="" data-aos-id="countup:in"></span>+</div>
+                    <p class="font-size-lg fw-medium mb-0">Years of Experience</p>
+                </div>
+
+                <div class="col-md-3 mb-6 mb-md-0">
+                    <div class="h1"><span data-toggle="countup" data-from="0" data-to="{{course_count}}" data-aos="" data-aos-id="countup:in"></span></div>
+                    <p class="font-size-lg fw-medium mb-0">Courses</p>
+                </div>
+            </div>
+        </div>
+    </div>
+ <!-- ASK AI
+    ================================================== -->
+    <section class="py-6 py-md-12 jarallax" data-jarallax data-speed=".8" style="background-image: url(static/assets/img/illustrations/illustration-5.jpg)">
+        <div class="container text-center py-xl-7 text-capitalize" data-aos="fade-up">
+            <h1>Learn With Siorik Artificial Intelligence</h1>
+            <div class="font-size-lg mb-md-6 mb-4">Do you have any queries regarding AML/CFT</div>
+            <div class="mx-auto">
+                <a href="{% url 'chatbot' %}" class="btn btn-dark btn-x-wide lift d-inline-block rounded-xl">ASK OUR AI</a>
+            </div>
+        </div>
+    </section>
+
+ <!-- PAGE TITLE
+    ================================================== -->
+    <header class="py-8 py-md-11" style="background-image: none;">
+        <div class="container text-center py-xl-2">
+            <h1 class="display-4 fw-semi-bold mb-0">Frequently Asked Questions</h1>
+            
+        </div>
+        
+    </header>
+
+
+    <!-- FAQ
+    ================================================== -->
+    <div class="container mb-11">
+        <div class="w-xl-65 mx-auto">
+           
+            <div class="mb-8" id="accordionCurriculum">
+                <div class="border rounded shadow mb-6 overflow-hidden">
+                    <div class="d-flex align-items-center" id="curriculumheadingOne">
+                        <h5 class="mb-0 w-100">
+                            <button class="d-flex align-items-center text-left p-5 min-height-80 text-dark fw-medium collapse-accordion-toggle line-height-one" type="button" data-bs-toggle="collapse" data-bs-target="#CurriculumcollapseOne" aria-expanded="true" aria-controls="CurriculumcollapseOne">
+                               1. How do I access LearnWithSiorik courses?
+
+                                <span class="ms-auto text-dark d-flex">
+                                    <!-- Icon -->
+                                    <svg width="15" height="2" viewBox="0 0 15 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="15" height="2" fill="currentColor"/>
+                                    </svg>
+
+                                    <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 7H15V9H0V7Z" fill="currentColor"/>
+                                        <path d="M6 16L6 8.74228e-08L8 0L8 16H6Z" fill="currentColor"/>
+                                    </svg>
+
+                                </span>
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="CurriculumcollapseOne" class="collapse show" aria-labelledby="curriculumheadingOne" data-parent="#accordionCurriculum">
+                        <div class="p-6 border-top">
+                            <p>To access our courses, follow these steps:</p>
+								<ol>
+									<li>Visit the course page you're interested in.</li>
+									<li>Click the "Enroll Now" button.</li>
+									<li>Follow the on-screen instructions to complete the enrollment.</li>
+								</ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border rounded shadow mb-6 overflow-hidden">
+                    <div class="d-flex align-items-center" id="curriculumheadingTwo">
+                        <h5 class="mb-0 w-100">
+                            <button class="d-flex align-items-center text-left p-5 min-height-80 text-dark fw-medium collapse-accordion-toggle line-height-one" type="button" data-bs-toggle="collapse" data-bs-target="#CurriculumcollapseTwo" aria-expanded="false" aria-controls="CurriculumcollapseTwo">
+                                2. What payment methods are accepted?
+
+                                <span class="ms-auto text-dark d-flex">
+                                    <!-- Icon -->
+                                    <svg width="15" height="2" viewBox="0 0 15 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="15" height="2" fill="currentColor"/>
+                                    </svg>
+
+                                    <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 7H15V9H0V7Z" fill="currentColor"/>
+                                        <path d="M6 16L6 8.74228e-08L8 0L8 16H6Z" fill="currentColor"/>
+                                    </svg>
+
+                                </span>
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="CurriculumcollapseTwo" class="collapse" aria-labelledby="curriculumheadingTwo" data-parent="#accordionCurriculum">
+                        <div class="p-6 border-top">
+                            <p>Currenly, We only credit cards and bank transfer. You can choose the payment method that suits you best during the checkout process.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border rounded shadow mb-6 overflow-hidden">
+                    <div class="d-flex align-items-center" id="curriculumheadingThree">
+                        <h5 class="mb-0 w-100">
+                            <button class="d-flex align-items-center text-left p-5 min-height-80 text-dark fw-medium collapse-accordion-toggle line-height-one" type="button" data-bs-toggle="collapse" data-bs-target="#CurriculumcollapseThree" aria-expanded="false" aria-controls="CurriculumcollapseThree">
+                                3. Can I access my courses on multiple devices?
+
+                                <span class="ms-auto text-dark d-flex">
+                                    <!-- Icon -->
+                                    <svg width="15" height="2" viewBox="0 0 15 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="15" height="2" fill="currentColor"/>
+                                    </svg>
+
+                                    <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 7H15V9H0V7Z" fill="currentColor"/>
+                                        <path d="M6 16L6 8.74228e-08L8 0L8 16H6Z" fill="currentColor"/>
+                                    </svg>
+
+                                </span>
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="CurriculumcollapseThree" class="collapse" aria-labelledby="curriculumheadingThree" data-parent="#accordionCurriculum">
+                        <div class="p-6 border-top">
+                            <p>Yes, you can access your courses on multiple devices. Just log in to your LearnWithSiorik account, and you'll have access to your courses from any device with internet access.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border rounded shadow mb-6 overflow-hidden">
+                    <div class="d-flex align-items-center" id="curriculumheadingFour">
+                        <h5 class="mb-0 w-100">
+                            <button class="d-flex align-items-center text-left p-5 min-height-80 text-dark fw-medium collapse-accordion-toggle line-height-one" type="button" data-bs-toggle="collapse" data-bs-target="#CurriculumcollapseFour" aria-expanded="false" aria-controls="CurriculumcollapseFour">
+                                4. How long will have access to the course once purchased?
+                                <span class="ms-auto text-dark d-flex">
+                                    <!-- Icon -->
+                                    <svg width="15" height="2" viewBox="0 0 15 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="15" height="2" fill="currentColor"/>
+                                    </svg>
+
+                                    <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 7H15V9H0V7Z" fill="currentColor"/>
+                                        <path d="M6 16L6 8.74228e-08L8 0L8 16H6Z" fill="currentColor"/>
+                                    </svg>
+
+                                </span>
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="CurriculumcollapseFour" class="collapse" aria-labelledby="curriculumheadingFour" data-parent="#accordionCurriculum">
+                        <div class="p-6 border-top">
+                            <p>Once You have purchased the course, you will have life time access.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="mb-8" id="accordionSuggestions">
+                <div class="border rounded shadow mb-6 overflow-hidden">
+                    <div class="d-flex align-items-center" id="suggestionsheadingOne">
+                        <h5 class="mb-0 w-100">
+                            <button class="d-flex align-items-center text-left p-5 min-height-80 text-dark fw-medium collapse-accordion-toggle line-height-one" type="button" data-bs-toggle="collapse" data-bs-target="#suggestionscollapseOne" aria-expanded="true" aria-controls="suggestionscollapseOne">
+                               5. How do I get a refund?
+                                <span class="ms-auto text-dark d-flex">
+                                    <!-- Icon -->
+                                    <svg width="15" height="2" viewBox="0 0 15 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="15" height="2" fill="currentColor"/>
+                                    </svg>
+
+                                    <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 7H15V9H0V7Z" fill="currentColor"/>
+                                        <path d="M6 16L6 8.74228e-08L8 0L8 16H6Z" fill="currentColor"/>
+                                    </svg>
+
+                                </span>
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="suggestionscollapseOne" class="collapse show" aria-labelledby="suggestionsheadingOne" data-parent="#accordionSuggestions">
+                        <div class="p-6 border-top">
+                            <p>Sorry, we don't have options to refund money once you have purchased the course.</p>
+                        </div>
+                    </div>
+                </div>
+
+     
+				
+            </div>
+        </div>
+    </div>
+
+
+<!-- FEATURES GENERAL
+    ================================================== -->
+    <section class="py-5 py-md-8 bg-white">
+        <div class="container container-wd">
+            <div class="row align-items-center mb-6">
+                <div class="col-md-6 order-2" data-aos="fade-left">
+                    <h2>Learn at your own pace</h2>
+                    <p class="line-clamp-3 line-height-md">You can set their own speed, depth, and style of learning, which enhances comprehension and retention. By offering a variety of resources and materials, We empower students to explore subjects of interest, review challenging concepts, and truly understand the content.</p>
+                </div>
+
+                <div class="col-md-6 order-1 mb-8 mb-md-0" data-aos="zoom-in">
+                    <img class="img-fluid" src="{% static 'assets/img/post/post-10.png' %}" alt="...">
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-md-6 order-2 order-md-1" data-aos="fade-right">
+                    <h2>Online Live Classes</h2>
+                    <p class="line-clamp-3 line-height-md">Discover the future of learning with our Online Live Classes! Join expert instructors in interactive, real-time sessions. Choose flexible schedules, and gain practical insights. Elevate your skills and knowledge. Enroll today on our website for an enriching and engaging educational journey!</p>
+                </div>
+
+                <div class="col-md-6 order-1 mb-8 mb-md-0 order-md-2 text-right" data-aos="zoom-in">
+                    <img class="img-fluid" src="{% static 'assets/img/post/post-11.png' %}" alt="...">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CALL ACTION
+    ================================================== -->
+    <section class="py-6 py-md-10 bg-white">
+        <div class="container container-wd">
+            <div class="bg-gradient-1 rounded-lg py-md-9 py-8 px-md-8 px-5">
+                <div class="row align-items-center">
+                    <div class="col-xl-9 mb-4 mb-xl-2 text-capitalize">
+                        <h2 class="text-white mb-3">Subscribe To our newsletter for Free Useful Resources for CAMS Exam</h2>
+                        {% comment %} <p class="font-size-lg text-white mb-3">You will be directed to MailChimp Site after clicking Subscribe button</p> {% endcomment %}
+                    </div>
+
+                    <div class="col-xl-3">
+                        <form action="http://eepurl.com/iiwylr" method="post">
+                             {% comment %} <div class="input-group d-block d-md-flex bg-white p-1 rounded-lg">  {% endcomment %}
+                                {% comment %} <input type="text" class="form-control w-200 w-md-auto form-control-sm rounded-lg border-0 placeholder-1" placeholder="Click on Subscribe Button" aria-label="Click on Subscribe Button" aria-describedby="button-addon2"> {% endcomment %}
+                                <div class="input-group-append ms-10">
+                                    <button class="btn btn-sm btn-dark w-100 w-md-auto btn-wide rounded-lg border-0" type="submit" id="button-addon2">Subscribe</button>
+                                </div>
+                            {% comment %} </div> {% endcomment %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- CONTACT
+    ================================================== -->
+    <div class="bg-white mt-md-n11 py-5 py-md-0">
+        <div class="container position-relative center-md-y">
+            <div class="rounded-lg py-6 px-5" style="background-color: #9796A8;">
+                <ul class="nav w-80 justify-content-between align-items-center text-center row mx-auto py-1">
+                    <li class="col-md-4 mb-5 mb-md-0">
+                        <div class="mb-4 text-white icon">
+                            <!-- Icon -->
+                            <svg width="48" height="50" viewBox="0 0 48 50" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24.0002 24.0425C27.231 24.0425 29.8594 21.414 29.8594 18.1831C29.8594 14.9522 27.231 12.3237 24.0002 12.3237C20.7692 12.3237 18.1406 14.9522 18.1406 18.1831C18.1406 21.414 20.7692 24.0425 24.0002 24.0425ZM24.0002 15.2534C25.6155 15.2534 26.9297 16.5677 26.9297 18.1831C26.9297 19.7985 25.6155 21.1128 24.0002 21.1128C22.3847 21.1128 21.0703 19.7985 21.0703 18.1831C21.0703 16.5677 22.3847 15.2534 24.0002 15.2534Z" fill="currentColor"/>
+                                <path d="M42.6384 33.6914H32.8346C37.4124 29.3218 41.5777 25.0386 41.5777 17.5781C41.5777 7.52617 34.0299 0 23.9998 0C13.9494 0 6.42148 7.54853 6.42148 17.5781C6.42148 25.0386 10.5869 29.3218 15.1648 33.6914H5.36084L0.00390625 50H47.9953L42.6384 33.6914ZM9.35117 17.5781C9.35117 9.09023 15.5118 2.92969 23.9998 2.92969C32.4876 2.92969 38.648 9.09023 38.648 17.5781C38.648 27.074 30.6328 30.4373 23.9998 38.6155C22.0064 36.1579 19.8746 34.1293 17.8016 32.1569C13.0803 27.6646 9.35117 24.1163 9.35117 17.5781ZM5.23682 43.457H15.7965V40.5273H6.19912L7.48223 36.6211H18.1402V36.5553C22.0314 40.414 23.0842 42.3479 23.9998 43.5012C24.9381 42.3193 25.9564 40.4256 29.859 36.5555V36.6211H40.5171L41.8002 40.5273H32.2027V43.457H42.7624L43.9492 47.0703H4.05L5.23682 43.457Z" fill="currentColor"/>
+                            </svg>
+
+                        </div>
+                        <p class="text-white font-size-sm mb-0">Boudha, Kathmandu, Nepal.</p>
+                    </li>
+                    <li class="col-md-4 mb-5 mb-md-0">
+                        <div class="mb-4 text-white icon">
+                            <!-- Icon -->
+                            <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5365 13.2762L15.2989 11.0385C14.682 10.4216 13.6781 10.4216 13.0612 11.0385L12.0441 12.0556C11.5767 12.523 10.8162 12.5228 10.349 12.0558L5.94045 7.64343C5.47199 7.17497 5.47192 6.41676 5.94045 5.94823C6.10428 5.7844 6.5747 5.31397 6.95755 4.93112C7.57177 4.31694 7.58035 3.31622 6.95696 2.6929L4.71989 0.462868C4.10297 -0.154019 3.09915 -0.154019 2.48388 0.46125C2.02347 0.917649 1.87497 1.06488 1.66853 1.26953C-0.55616 3.49418 -0.55616 7.11398 1.66843 9.33856L8.65371 16.3275C10.8836 18.5574 14.4927 18.5576 16.7228 16.3275L17.5365 15.5138C18.1535 14.8969 18.1535 13.8931 17.5365 13.2762ZM3.22814 1.20874C3.43377 1.00311 3.76831 1.00308 3.97461 1.20931L6.21168 3.43934C6.4178 3.64546 6.4178 3.97906 6.21168 4.18521L5.83871 4.55815L2.8571 1.57655L3.22814 1.20874ZM9.39972 15.5817L2.41441 8.59272C0.693225 6.87154 0.59862 4.1689 2.12346 2.33469L5.09641 5.30765C4.31524 6.1932 4.3478 7.5426 5.19439 8.3892L9.60286 12.8013C9.60289 12.8014 9.60296 12.8014 9.603 12.8015C10.4487 13.6472 11.798 13.6819 12.6847 12.8996L15.6577 15.8727C13.8293 17.3949 11.1328 17.3147 9.39972 15.5817ZM16.7907 14.7679L16.4177 15.1409L13.4342 12.1573L13.8071 11.7844C14.0128 11.5788 14.3473 11.5787 14.553 11.7844L16.7907 14.022C16.9963 14.2277 16.9963 14.5623 16.7907 14.7679Z" fill="currentColor"/>
+                            </svg>
+
+                        </div>
+                        <p class="text-white font-size-sm mb-0"><span class="d-block">Mobile: (+0977) 980 300 8930</p>
+                    </li>
+                    <li class="col-md-4 mb-5 mb-md-0">
+                        <div class="mb-4">
+                            <div class="mb-4 text-white icon">
+                                <!-- Icon -->
+                                <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M42.2554 30.7482L34.1584 21.2999L41.3503 17.2276C42.0531 16.8298 42.2977 15.9418 41.8969 15.2445C41.496 14.547 40.6011 14.3042 39.8987 14.702C39.2973 15.0425 25.6689 22.7591 24.9995 23.1382C24.3269 22.7573 10.6952 15.0388 10.1004 14.702C9.39768 14.3042 8.50324 14.5468 8.10217 15.2445C7.70139 15.9418 7.94592 16.8297 8.64875 17.2276L15.8406 21.2999L7.74358 30.7482C7.21946 31.3599 7.29406 32.2773 7.91037 32.7975C8.52658 33.3179 9.45139 33.2435 9.97522 32.632L18.43 22.7661L24.2737 26.0749C24.7236 26.3296 25.2756 26.3295 25.7253 26.0749L31.569 22.7661L40.0238 32.632C40.548 33.2439 41.4728 33.3175 42.0886 32.7975C42.7049 32.2774 42.7795 31.3599 42.2554 30.7482Z" fill="currentColor"/>
+                                    <path d="M45.6055 7.85059H4.39453C1.97139 7.85059 0 9.80715 0 12.2121V37.4118C0 39.8167 1.97139 41.7733 4.39453 41.7733H45.6055C48.0286 41.7733 50 39.8167 50 37.4118V12.2121C50 9.80715 48.0286 7.85059 45.6055 7.85059ZM47.0703 37.4118C47.0703 38.2134 46.4132 38.8656 45.6055 38.8656H4.39453C3.58682 38.8656 2.92969 38.2134 2.92969 37.4118V12.2121C2.92969 11.4104 3.58682 10.7582 4.39453 10.7582H45.6055C46.4132 10.7582 47.0703 11.4104 47.0703 12.2121V37.4118Z" fill="currentColor"/>
+                                </svg>
+
+                            </div>
+                        </div>
+                        <p class="text-white font-size-sm mb-0">risksimplifier[@]siorik.com</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

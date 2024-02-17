@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+        
+		<title>CAMS Quiz</title>
+		<style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 40px; /* Increased margin */
+            }
+    
+            h2 {
+                color: #007bff;
+                margin-bottom: 30px; /* Increased margin for h2 */
+            }
+    
+            .table {
+                width: 100%;
+                margin-bottom: 3rem; /* Increased margin for the entire table */
+                color: #212529;
+            }
+    
+            .table th,
+            .table td {
+                padding: 0.5rem; /* Increased padding for cells */
+                vertical-align: top;
+                border-top: 1px solid #dee2e6;
+            }
+    
+            .table thead th {
+                vertical-align: bottom;
+                border-bottom: 2px solid #dee2e6;
+            }
+    
+            .table tbody + tbody {
+                border-top: 2px solid #dee2e6;
+            }
+    
+            .table-bordered {
+                border: 1px solid #dee2e6;
+            }
+    
+            .table-bordered th,
+            .table-bordered td {
+                border: 1px solid #dee2e6;
+            }
+    
+            .bg-success {
+                background-color: #28a745; /* Override background color */
+            }
+    
+            .bg-danger {
+                background-color: #dc3545; /* Override background color */
+            }
+    
+            .text-white {
+                color: #fff;
+            }
+            .restart-button {
+                display: block;
+                margin-top: 20px; /* Adjust the margin as needed */
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            
+            .flex-container {
+                display: flex;
+                justify-content: center; /* Center the items horizontally */
+                align-items: center; /* Center the items vertically */
+                margin-top: 20px; /* Adjust the margin as needed */
+            }
+        </style>
+	</head>
+	<body>
+	<h2 class="my-4">Attempted Question</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Question</th>
+                <th>Submitted Answer</th>
+                <th>Right Answer</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in result %}
+            <tr>
+                <td>{{row.id}}</td>
+                <td>{{row.question}}</td>
+                <td>{{row.question.right_opt}}</td>
+                {% if row.question.right_opt == row.right_answer %}
+                <td class="bg-success text-white">{{row.right_answer}}</td>
+                {% else %}
+                <td class="bg-danger text-white">{{row.right_answer}}</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h2 class="my-4">Result Detail</h2>
+    <table class="table table-bordered">
+        <tr>
+            <th>Total Questions</th>
+            <td>{{result.count}}</td>
+        </tr>
+
+        <tr>
+            <th>Right Answers</th>
+            <td>{{rightAns}}</td>
+        </tr>
+        <tr>
+            <th>Percentage</th>
+            <td>{{percentage}}%</td>
+        </tr>
+    </table>
+    
+    <div class="flex-container">
+        <a href="{% url 'restart_quiz' %}" class="restart-button">Restart</a>
+    </div>
+    </body>
+	</html>

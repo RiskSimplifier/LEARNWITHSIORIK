@@ -1,0 +1,183 @@
+
+{% extends 'base.html' %}
+{% block title %}Our Services{% endblock %}
+{% load static %}
+
+{% block styles %}
+<style>
+  .message-form {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+  }
+
+  </style>
+{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Libraries Stylesheet -->
+
+
+<!-- Customized Bootstrap Stylesheet -->
+
+  
+<!-- Template Stylesheet -->
+<!--<link href="{% static 'assets/css1/style.css' %}" rel="stylesheet">-->
+
+   <!-- Page Header Start -->
+ <div class="container-fluid bg-dark p-5">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="display-4 text-white">AML/CFT AI CHATBOT</h1>
+            
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- Services Start -->
+<div class="container-fluid py-6 px-5">
+  
+    <div class="card-header bg-primary text-white">Chat</div>
+    {% if user.is_authenticated %}
+    <div class="card-header bg-primary text-white"><b>Welcome, {{user.username}}</b></div>  
+    {% else %}
+    <div class="card-header bg-primary text-black"><a style="color: yellow" href="login">Login</a>   <a style="color: yellow;" href="register">Register</a></div>
+    {% endif %}
+    <div class="card-body messages-box">
+      
+      <ul class="list-unstyled messages-list">
+        
+        <!-- <li class="message received">
+          <div class="message-text">
+            <div class="message-sender">
+              <b>AI Chatbot</b>
+            </div>
+            <div class="message-content">
+              Hi {{user.username}}, I am your AI Chatbot, you can ask me anything.
+            </div>
+          </div>
+        </li> -->
+
+        {% for chat in chats %}
+          {% if chat.user == request.user %}
+
+            <li class="message sent">
+          <div class="message-text">
+            <div class="message-sender">
+              <b>You</b>
+            </div>
+            <div class="message-content">
+              {{chat.message}}
+            </div>
+          </div>
+        </li>
+
+        <li class="message received">
+          <div class="message-text">
+            <div class="message-sender">
+              <b>AML/CFT AI Chatbot</b>
+            </div>
+            <div class="message-content">
+              {{chat.response}}
+            </div>
+          </div>
+        </li>
+
+          {% endif %}
+        {% endfor %}
+        
+      </ul>
+      
+    </div>
+    <br><br>
+    <br><br>
+    <br><br>
+  </div>
+  <form class="message-form">
+    {%csrf_token%}
+
+    <div class="input-group">
+      <input type="text" class="form-control rounded-left-xl placeholder-1 message-input" placeholder="Type Your Question"  aria-describedby="button-addon2">
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-sm btn-bossanova w-100 w-md-auto btn-wide rounded border-0 btn-send">Send</button>
+      </div>
+    </div>
+  </form>
+</div> 
+    
+</div>
+<br>
+<!-- Services End -->
+
+
+
+</body>
+</html>
+<script>
+  const messagesList = document.querySelector('.messages-list');
+  const messageForm = document.querySelector('.message-form');
+  const messageInput = document.querySelector('.message-input');
+
+  messageForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const message = messageInput.value.trim();
+    if (message.length === 0) {
+      return;
+    }
+
+    const messageItem = document.createElement('li');
+    messageItem.classList.add('message', 'sent');
+    messageItem.innerHTML = `
+        <div class="message-text">
+            <div class="message-sender">
+                <b>You</b>
+            </div>
+            <div class="message-content">
+                ${message}
+            </div>
+        </div>`;
+    messagesList.appendChild(messageItem);
+
+    messageInput.value = '';
+
+    fetch('', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        'csrfmiddlewaretoken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+        'message': message
+      })
+    })
+      .then(response => response.json())
+      .then(data => {
+        const response = data.response;
+        const messageItem = document.createElement('li');
+        messageItem.classList.add('message', 'received');
+        messageItem.innerHTML = `
+        <div class="message-text">
+            <div class="message-sender">
+              <b>AI Chatbot</b>
+            </div>
+            <div class="message-content">
+                ${response}
+            </div>
+        </div>
+          `;
+        messagesList.appendChild(messageItem);
+      });
+  });
+
+</script>
+
+{% endblock %}
