@@ -1,1 +1,2 @@
 1. change email STMP in settings
+minor changes
