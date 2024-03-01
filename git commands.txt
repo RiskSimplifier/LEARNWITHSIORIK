@@ -1,6 +1,10 @@
+git update-index --assume-unchanged SiorikLearn/settings.py ##This allows you to tell Git to stop tracking changes to a specific file temporarily.
+git status ###You should see settings.py listed as "assume unchanged" or not listed at all among the changed files.
 git add .
 git commit -m "minor changes"
 git push -u origin main
 
 
 git remote add origin git@github.com:RiskSimplifier/LEARNWITHSIORIK.git
+
+git reset HEAD path/to/settings.py
