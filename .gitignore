@@ -2,3 +2,5 @@
 isvenv/
 lsvenv/
 db.sqlite3
+SiorikLearn/settings.py
+settings.py

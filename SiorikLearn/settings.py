@@ -40,7 +40,7 @@ SECRET_KEY = 'django-insecure-dd&d*tr037cx-4wtwx=8lvnu%g)bi-9pef)n_qav4r!q2ag$ao
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["learnwithsiorik.com","https://secureacceptance.cybersource.com/pay"]
+ALLOWED_HOSTS = ["learnwithsiorik.com","https://secureacceptance.cybersource.com/pay","127.0.0.1"]
 
 
 
