@@ -258,13 +258,16 @@ def CHECKOUT(request, slug):
 
 
 def MY_COURSE(request):
-    course = UserCourse.objects.filter(user = request.user)
+    try:
+        course = UserCourse.objects.filter(user = request.user)
 
-    context = {
-        'course': course,
-    }
-
-    return render(request, 'course/my-course.html', context)
+        context = {
+            'course': course,
+        }
+    
+        return render(request, 'course/my-course.html', context)
+    except:
+        return redirect('register')
 
 def construct_signature(signed_field_names, data):
     signature = ""

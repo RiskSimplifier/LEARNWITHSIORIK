@@ -23,7 +23,7 @@
                                 </svg>
 
                             </div>
-                            <span class="text-dark fw-medium me-1">COURSES</span>
+                            <span class="text-dark fw-medium me-1">COURSES</span> 
                         </div>
                     
                     </a>
@@ -44,7 +44,7 @@
                             <div class="dropdown-menu ps-3 top-0 pe-0 py-0 shadow-none bg-transparent">
                                 <div class="dropdown-menu-md bg-primary rounded dropdown-menu-inner">
                                     {% for i in cat.course_set.all %}
-                                    <a class="dropdown-item" href="course-single-v1.html">
+                                    <a class="dropdown-item" href="{% url 'register' %}">
                                         {{i.title}}
                                     </a>
                                     {% endfor %}  
